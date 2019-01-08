@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CatalogService } from './Services/catalog.service';
+import { CatalogService } from './catalog.service';
 import { Teacher } from './Models/teacher';
 
 @Component({
