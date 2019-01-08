@@ -1,22 +1,29 @@
-<table style="width:100%">
-  <tr>
-    <th>Name</th>
-    <th>Nacionality</th>
-    <th>Birthday</th>
-    <th>Academical Degree</th>
-    <th>Teaching Areas</th>
-    <th>Price Per Hour</th>
-    <th>Rating</th>
-  </tr>
-  <tr *ngFor="let teacher of teachers">
-    <td>{{teacher.name}}</td>
-    <td>{{teacher.nacionality}}</td>
-    <td>{{teacher.birthday}}</td>
-    <td>{{teacher.academicalDegree}}</td>
-    <td>{{teacher.teachingAreas}}</td>
-    <td>{{teacher.pricePerHour}}</td>
-    <td>{{teacher.rating}}</td>
-  </tr>
+<app-nav></app-nav>
+
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Nacionality</th>
+      <th>Birthday</th>
+      <th>Academical Degree</th>
+      <th>Teaching Areas</th>
+      <th>Price Per Hour</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teachers">
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.nacionality}}</td>
+      <td>{{teacher.birthday}}</td>
+      <td>{{teacher.academicalDegree}}</td>
+      <td>{{teacher.teachingAreas}}</td>
+      <td>{{teacher.pricePerHour}}</td>
+      <td>{{teacher.rating}}</td>
+    </tr>
+  </tbody>
 </table>
 
 <div class="row">
