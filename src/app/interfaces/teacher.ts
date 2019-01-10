@@ -1,4 +1,4 @@
-export class Teacher {
+export interface Teacher {
     name: string;
     nacionality: string;
     birthday: Date;
