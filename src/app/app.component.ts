@@ -18,14 +18,9 @@ export class AppComponent {
   getTeachers() {
     this.catalogService.getTeachers()
       .subscribe(
-        value => this.processTeachersResponse(value),
+        value => this.teachers = value,
         error => console.log("ERROR getTeachers()"),
         () => console.log("Finished")
       );;
   }
-
-  processTeachersResponse(response: any) {
-    this.teachers = response.value;
-  }
-
 }

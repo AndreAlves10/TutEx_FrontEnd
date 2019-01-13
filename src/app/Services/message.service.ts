@@ -10,12 +10,15 @@ import { Message } from '../interfaces/message';
 })
 export class MessageService {
 
-  private endpointUrl = "http://localhost:60197/api/Messages/message";
+  private endpointUrl = "http://localhost:60197";
 
   constructor(private http: HttpClient) { }
 
   sendMessage(message: Message): Observable<any> {
-    console.log("Message sent service");
-    return this.http.post<any>(this.endpointUrl, message);
+    return this.http.post<any>(this.endpointUrl + "/api/Messages/message", message);
+  }
+
+  getMessagesByUserID(id: number): Observable<any> {
+    return this.http.get<any>(this.endpointUrl + "/api/Messages/message/user/" + id);
   }
 }
