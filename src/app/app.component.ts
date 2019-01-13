@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CatalogService } from './services/catalog.service';
-import { Teacher } from './interfaces/teacher';
+import { Teacher } from './interfaces/Teacher';
 
 @Component({
   selector: 'app-root',

@@ -10,13 +10,17 @@ import { CatalogComponent } from './Components/catalog/catalog.component';
 
 import { MaterializeModule } from 'angular2-materialize';
 import { NavComponent } from './Components/nav/nav.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     CatalogComponent,
-    NavComponent
+    NavComponent,
+    ProfileComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
