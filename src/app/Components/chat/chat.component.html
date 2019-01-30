@@ -1,0 +1,64 @@
+<div class="container clearfix">
+  <div class="people-list" id="people-list">
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <label class="label-icon" for="search">
+            <i class="material-icons">search</i>
+          </label>
+          <input id="search" type="search" required>
+        </div>
+      </form>
+    </div>
+    <ul class="list" *ngFor="let chat of chatList">
+      <li class="clearfix sidebar" (click)="onChatClick(chat.userIDTo)">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
+        <div class="about">
+          <div class="name">{{chat.nameUserTo}}</div>
+          <div class="status">
+            <i class="fa fa-circle online"></i> online
+            <!-- Must be changed for materialize icons -->
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="chat">
+    <div class="chat-header clearfix">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+      <div class="chat-about">
+        <div class="chat-with">Chat with Vincent Porter</div>
+        <div class="chat-num-messages">already 1 902 messages</div>
+      </div>
+      <i class="fa fa-star"></i>
+    </div> <!-- end chat-header -->
+
+    <div class="chat-history">
+      <ul *ngFor="let message of messages">
+        <li class="clearfix">
+          <div class="message-data align-right">
+            <span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
+            <span class="message-data-name">{{ message.nameUserFrom }}</span>
+
+          </div>
+          <div *ngIf="message.userIDTo == 1" class="message other-message float-right">
+            {{ message.content }}
+          </div>
+          <div *ngIf="message.userIDTo != 1" class="message my-message">
+            {{ message.content }}
+          </div>
+        </li>
+      </ul>
+    </div> <!-- end chat-history -->
+    <div class="chat-message clearfix">
+      <textarea #messageToSend name="message-to-send" id="message-to-send" placeholder="Type your message" rows="3"></textarea>
+
+      <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+      <i class="fa fa-file-image-o"></i>
+
+      <button (click)="sendMessage(messageToSend.value)">Send</button>
+
+    </div> <!-- end chat-message -->
+  </div> <!-- end chat -->
+</div> <!-- end container -->
